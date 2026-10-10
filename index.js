@@ -26,3 +26,4 @@ function populateUnits(unitList) {
         toUnit.appendChild(option2);
     });
 }
+populateUnits(units.length);
