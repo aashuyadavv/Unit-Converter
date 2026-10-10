@@ -27,3 +27,8 @@ function populateUnits(unitList) {
     });
 }
 populateUnits(units.length);
+
+categorySelect.addEventListener("change", function() {
+    const selectedCategory = categorySelect.value;
+    populateUnits(units[selectedCategory]);
+});
