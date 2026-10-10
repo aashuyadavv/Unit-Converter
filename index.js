@@ -11,3 +11,18 @@ const units = {
     temperature: ["Celsius", "Fahrenheit", "Kelvin"]
 };
 
+function populateUnits(unitList) {
+    fromUnit.innerHTML = "";
+    toUnit.innerHTML = "";
+
+    unitList.forEach(function(unit) {
+        const option1 = document.createElement("option");
+        option1.value = unit;
+        option1.textContent = unit;
+
+        const option2 = option1.cloneNode(true);
+
+        fromUnit.appendChild(option1);
+        toUnit.appendChild(option2);
+    });
+}
