@@ -1,7 +1,7 @@
 const categorySelect = document.getElementById("category");
 const fromUnit = document.getElementById("from-unit");
 const toUnit = document.getElementById("to-unit");
-const valueInput = document.getElementById("value");
+const valueInput = document.getElementById("input-value");
 const result = document.getElementById("result");
 const swapButton = document.getElementById("swap-btn");
 
@@ -32,3 +32,37 @@ categorySelect.addEventListener("change", function() {
     const selectedCategory = categorySelect.value;
     populateUnits(units[selectedCategory]);
 });
+
+function convertUnits(value, from, to, category) {
+    if (category === "length") {
+        const meters = {
+            Meter: 1,
+            Kilometer: 1000,
+            Centimeter: 0.01,
+            Millimeter: 0.001,
+            Mile: 1609.344,
+            Foot: 0.3048,
+            Inch: 0.0254
+        };
+
+        return value * meters[from] / meters[to];
+    }
+}
+valueInput.addEventListener("input", updateResult);
+fromUnit.addEventListener("change", updateResult);
+toUnit.addEventListener("change", updateResult);
+
+function updateResult() {
+    const value = Number(valueInput.value);
+    const category = categorySelect.value;
+    const from = fromUnit.value;
+    const to = toUnit.value;
+
+    if (valueInput.value === "") {
+        result.textContent = "0";
+        return;
+    }
+
+    const convertedValue = convertUnits(value, from, to, category);
+    result.textContent = convertedValue;
+}
