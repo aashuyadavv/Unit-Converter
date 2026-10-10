@@ -47,6 +47,19 @@ function convertUnits(value, from, to, category) {
 
         return value * meters[from] / meters[to];
     }
+
+    if (category === "weight") {
+    const weights = {
+        Kilogram: 1000,
+        Gram: 1,
+        Milligram: 0.001,
+        Pound: 453.59237,
+        Ounce: 28.349523125
+    };
+
+    return value * weights[from] / weights[to];
+}
+
 }
 valueInput.addEventListener("input", updateResult);
 fromUnit.addEventListener("change", updateResult);
