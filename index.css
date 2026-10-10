@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Sans-serif;
+    background: #f6f8fc;
+    color: #182230;
+    min-height: 100vh;
+}
+
+.navbar{
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border-bottom: 1px solid #e5eaf1;
+}
+
+.logo{
+    font-size: 24px;
+    font-weight: bold;
+    color: #2459d3;
+}
+
+.container{
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.intro{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.intro h1{
+    margin: 12px 0;
+    font-size: 34px;
+}
+
+.subtitle{
+    color: #778194;
+}
+
+.converter-card {
+    padding: 25px;
+    background: white;
+    border: 1px solid #e5eaf1;
+    border-radius: 16px;
+    box-shadow: 0 12px 35px rgba(20, 40, 80, 0.05);
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+input, select{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dce2eb;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.unit-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#swap-btn {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border: 1px solid #dce2eb;
+    border-radius: 9px;
+    background: white;
+    color: #2459d3;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+.result-box {
+    margin-top: 25px;
+    padding: 20px;
+    background: #f1f5ff;
+    border-radius: 12px;
+}
+
+#result {
+    margin-top: 12px;
+    color: #2459d3;
+    font-size: 32px;
+}
+
+.reset-btn {
+    width: 100%;
+    margin-top: 15px;
+}
+
+@media (max-width: 520px) {
+    .container {
+        margin-top: 25px;
+    }
+    .converter-card {
+        padding: 18px;
+    }
+
+    .intro h1 {
+        font-size: 28px;
+    }
+}

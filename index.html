@@ -1,55 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unit Converter</title>
 </head>
 <body>
-    <header>
-        <h1>Unit Converter</h1>
-        <p>Simple conversions. Accurate results.</p>
+    <header class="navbar">
+        <h1 class="logo">Unit Converter</h1>
+        <span>UNIT CONVERTER</span>
     </header>
 
-    <main>
-        <h2>Unit Converter</h2>
-        <p>Convert length, weight and temperature easily.</p>
+    <main class="container">
+        <section class="intro">
+            <h1>Convert with Confidence.</h1>
+            <p>Simple conversions. Accurate results.</p>
+             <p>Convert length, weight and temperature easily.</p>
+        </section>
 
+        <section class="converter-card">
+            <h2>Unit Converter</h2>
+
+        <div class="form-group">    
         <label for="category">Choose category:</label>
         <select id="category">
             <option value="length">Length</option>
             <option value="weight">Weight</option>
             <option value="temperature">Temperature</option>
         </select>
+        </div>
 
-        <br><br>
-
+        <div class="form-group">
         <label for="input-value">Enter value:</label>
-        <input type="number" id="input-value" placeholder="Enter a number">
+        <input type="number" id="input-value" placeholder="Enter a number" step="any">
+        </div>
 
-        <br><br>
-
+        <div class="unit-row">
+            <div class="form-group">                
         <label for="from-unit">From:</label>
-        <select id="from-unit">
-            <option value="kilometer">Kilometer</option>
-            <option value="meter">Meter</option>
-        </select>
+        <select id="from-unit"></select>
+            </div>
+            <button type="button" id="swap-btn"arial-label="Swap units"></button>
+            <div class="form-group">
+                    <label for="to-unit">To</label>
+                    <select id="to-unit"></select>
+                </div>
 
-        <label for="to-unit">To:</label>
-        <select id="to-unit">
-            <option value="meter">Meter</option>
-            <option value="kilometer">Kilometer</option>
-        </select>
+            </div>
 
-        <br><br>
+            <div class="result-box" aria-live="polite">
+                <p>CONVERTED RESULT</p>
+                <h3 id="result">—</h3>
+                <p id="result-unit">Your result will appear here</p>
+            </div>
 
-        <button id="convert-btn">Convert</button>
+            <p id="message">Enter a value to get started.</p>
 
-        <h3>Result: <span id="result">—</span></h3>
+            <button type="button" id="reset-btn" class="reset-btn">
+                Reset converter
+            </button>
+
+        </section>
+
     </main>
 
     <footer>
         <p>Built with HTML, CSS and JavaScript.</p>
     </footer>
+
 </body>
 </html>
