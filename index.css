@@ -103,6 +103,14 @@ input, select{
 .reset-btn {
     width: 100%;
     margin-top: 15px;
+    color: green;
+    border: 1px solid green;
+    background: #f1f5ff;
+    padding: 12px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+
 }
 
 @media (max-width: 520px) {
@@ -116,4 +124,10 @@ input, select{
     .intro h1 {
         font-size: 28px;
     }
+}
+footer {
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    
 }
