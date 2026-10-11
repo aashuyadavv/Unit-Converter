@@ -4,6 +4,7 @@ const toUnit = document.getElementById("to-unit");
 const valueInput = document.getElementById("input-value");
 const result = document.getElementById("result");
 const swapButton = document.getElementById("swap-btn");
+const resetButton = document.getElementById("reset-btn");
 
 const units = {
     length: ["Meter", "Kilometer", "Centimeter", "Millimeter", "Mile", "Foot", "Inch"],
@@ -105,4 +106,17 @@ swapButton.addEventListener("click", function() {
     toUnit.value = previousFrom;
 
     updateResult();
+});
+resetButton.addEventListener("click", function() {
+    valueInput.value = "";
+    categorySelect.value = "length";
+
+    populateUnits(units.length);
+
+    result.textContent = "—";
+    document.getElementById("result-unit").textContent =
+        "Your result will appear here";
+
+    document.getElementById("message").textContent =
+        "Enter a value to get started.";
 });
