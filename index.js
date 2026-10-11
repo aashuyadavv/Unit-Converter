@@ -98,3 +98,11 @@ function updateResult() {
     const convertedValue = convertUnits(value, from, to, category);
     result.textContent = convertedValue;
 }
+swapButton.addEventListener("click", function() {
+    const previousFrom = fromUnit.value;
+
+    fromUnit.value = toUnit.value;
+    toUnit.value = previousFrom;
+
+    updateResult();
+});
