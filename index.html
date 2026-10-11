@@ -9,22 +9,33 @@
 </head>
 <body>
     <header class="navbar">
-        <h1 class="logo">Unit Converter</h1>
-        <span>UNIT CONVERTER</span>
+        <a href="#" class="logo">
+        <span class="logo-icon">U</span>
+        Unit Converter
+    </a>
+        <span class="nav-label">UNIT CONVERTER</span>
     </header>
 
     <main class="container">
         <section class="intro">
+            <p class="eyebrow">EVERYDAY CONVERSIONS</p>
             <h1>Convert with Confidence.</h1>
-            <p>Simple conversions. Accurate results.</p>
-             <p>Convert length, weight and temperature easily.</p>
+            <p class="subtitle">
+                A simple, accurate way to convert units in seconds.
+            </p>
         </section>
 
         <section class="converter-card">
-            <h2>Unit Converter</h2>
+            <div class="card-heading">
+                <div>
+                <h2>Unit Converter</h2>
+                <p>Select a category and enter your value.</p>
+                </div>
+                <span class="status-dot" aria-label="Ready"></span>
+                </div>
 
         <div class="form-group">    
-        <label for="category">Choose category:</label>
+        <label for="category">Conversion category</label>
         <select id="category">
             <option value="length">Length</option>
             <option value="weight">Weight</option>
@@ -33,16 +44,25 @@
         </div>
 
         <div class="form-group">
-        <label for="input-value">Enter value:</label>
-        <input type="number" id="input-value" placeholder="Enter a number" step="any">
+        <label for="input-value">Enter value</label>
+        <input type="number" id="input-value" placeholder="Enter a number" step="any" autocomplete="off"
+        />
         </div>
 
         <div class="unit-row">
             <div class="form-group">                
-        <label for="from-unit">From:</label>
+        <label for="from-unit">From</label>
         <select id="from-unit"></select>
             </div>
-                <button type="button" id="swap-btn" aria-label="Swap units">⇄</button>
+                <button
+                 type="button"
+                 id="swap-btn"
+                 class="swap-btn"
+                 aria-label="Swap units"
+                 title="Swap units">
+                 ⇄
+                </button>
+
                     <div class="form-group">
                     <label for="to-unit">To</label>
                     <select id="to-unit"></select>
@@ -61,14 +81,12 @@
             <button type="button" id="reset-btn" class="reset-btn">
                 Reset converter
             </button>
-
         </section>
 
     </main>
 
-    <footer>
-        <p>Built with HTML, CSS and JavaScript.</p>
-    </footer>
-
+    <p class="footer-text">
+        Built with HTML, CSS and JavaScript.
+    </p>
 </body>
 </html>
