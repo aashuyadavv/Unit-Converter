@@ -97,7 +97,7 @@ function updateResult() {
     }
 
     const convertedValue = convertUnits(value, from, to, category);
-    result.textContent = convertedValue;
+    result.textContent = Number(convertedValue.toFixed(4));
 }
 swapButton.addEventListener("click", function() {
     const previousFrom = fromUnit.value;
