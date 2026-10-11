@@ -102,7 +102,11 @@ function updateResult() {
 
     const convertedValue = convertUnits(value, from, to, category);
     result.textContent = Number(convertedValue.toFixed(4));
+
     document.getElementById("result-unit").textContent = to;
+    
+    document.getElementById("message").textContent =
+    `${value} ${from} = ${Number(convertedValue.toFixed(4))} ${to}`;
 }
 swapButton.addEventListener("click", function() {
     const previousFrom = fromUnit.value;
