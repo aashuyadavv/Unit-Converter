@@ -87,6 +87,10 @@ toUnit.addEventListener("change", updateResult);
 
 function updateResult() {
     const value = Number(valueInput.value);
+    if (valueInput.value === "" || !Number.isFinite(value)) {
+    result.textContent = "—";
+    return;
+}
     const category = categorySelect.value;
     const from = fromUnit.value;
     const to = toUnit.value;
