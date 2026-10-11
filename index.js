@@ -59,6 +59,25 @@ function convertUnits(value, from, to, category) {
 
     return value * weights[from] / weights[to];
 }
+if (category === "temperature") {
+    let celsius;
+
+    if (from === "Celsius") {
+        celsius = value;
+    } else if (from === "Fahrenheit") {
+        celsius = (value - 32) * 5 / 9;
+    } else if (from === "Kelvin") {
+        celsius = value - 273.15;
+    }
+
+    if (to === "Celsius") {
+        return celsius;
+    } else if (to === "Fahrenheit") {
+        return (celsius * 9 / 5) + 32;
+    } else if (to === "Kelvin") {
+        return celsius + 273.15;
+    }
+}
 
 }
 valueInput.addEventListener("input", updateResult);
