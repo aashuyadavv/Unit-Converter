@@ -182,7 +182,7 @@ select:focus {
     width: 43px;
     height: 43px;
     flex-shrink: 0;
-    margin-top: 22px;
+    /* margin-bottom: 22px; */
     border: 1px solid #dfe4ec;
     border-radius: 10px;
     background: #ffffff;
@@ -198,16 +198,48 @@ select:focus {
 }
 
 .result-box {
-    margin-top: 25px;
-    padding: 20px;
-    background: #f1f5ff;
-    border-radius: 12px;
+  margin-top: 3px;
+  padding: 23px 20px;
+  border: 1px solid #dce6ff;
+  border-radius: 12px;
+  background: #f4f7ff;
+  overflow-wrap: anywhere;
 }
 
-#result {
+/* #result {
     margin-top: 12px;
     color: #2459d3;
     font-size: 32px;
+} */
+
+.result-label {
+  color: #62749a;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 1.5px;
+}
+
+.result-value {
+  margin-top: 13px;
+  color: #204db7;
+  font-size: clamp(28px, 7vw, 36px);
+  font-weight: 750;
+  line-height: 1.3;
+  letter-spacing: -1px;
+}
+
+.result-unit {
+  margin-top: 5px;
+  color: #6e7d98;
+  font-size: 13px;
+}
+
+.message {
+  min-height: 18px;
+  margin-top: 15px;
+  color: #7b8492;
+  font-size: 12px;
+  line-height: 1.5;
 }
 
 .reset-btn {
@@ -225,17 +257,57 @@ select:focus {
     transition: background 0.2s;
 }
 
-@media (max-width: 520px) {
-    .container {
-        margin-top: 25px;
-    }
-    .converter-card {
-        padding: 18px;
-    }
+.reset-btn:hover {
+  background: #f7f8fa;
+}
 
-    .intro h1 {
-        font-size: 28px;
-    }
+@media (max-width: 480px) {
+  .navbar {
+    height: 66px;
+    padding: 0 18px;
+  }
+
+  .logo {
+    font-size: 19px;
+  }
+
+  .nav-label {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .container {
+    padding-top: 43px;
+  }
+
+  .intro {
+    margin-bottom: 25px;
+  }
+
+  .intro h1 {
+    letter-spacing: -1.1px;
+  }
+
+  .converter-card {
+    padding: 21px 17px;
+    border-radius: 14px;
+  }
+
+  .unit-row {
+    gap: 7px;
+  }
+
+  .swap-btn {
+    width: 37px;
+    height: 42px;
+    font-size: 22px;
+  }
+
+  input,
+  select {
+    padding: 0 9px;
+    font-size: 13px;
+  }
 }
 
 .footer-text {
