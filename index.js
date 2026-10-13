@@ -109,6 +109,7 @@ function updateResult() {
         message.textContent = "Please check your selected units.";
         return;
     }
+    
 
     const formattedResult = Number(convertedValue.toFixed(4));
 
