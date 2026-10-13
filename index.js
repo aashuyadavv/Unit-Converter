@@ -85,29 +85,38 @@ valueInput.addEventListener("input", updateResult);
 fromUnit.addEventListener("change", updateResult);
 toUnit.addEventListener("change", updateResult);
 
+
 function updateResult() {
     const value = Number(valueInput.value);
-    if (valueInput.value === "" || !Number.isFinite(value)) {
-    result.textContent = "—";
-    return;
-}
     const category = categorySelect.value;
     const from = fromUnit.value;
     const to = toUnit.value;
+    const resultUnit = document.getElementById("result-unit");
+    const message = document.getElementById("message");
 
-    if (valueInput.value === "") {
-        result.textContent = "0";
+    if (valueInput.value === "" || !Number.isFinite(value)) {
+        result.textContent = "—";
+        resultUnit.textContent = "Your result will appear here";
+        message.textContent = "Enter a valid number to get started.";
         return;
     }
 
     const convertedValue = convertUnits(value, from, to, category);
-    result.textContent = Number(convertedValue.toFixed(4));
 
-    document.getElementById("result-unit").textContent = to;
+    if (!Number.isFinite(convertedValue)) {
+        result.textContent = "—";
+        resultUnit.textContent = "Conversion unavailable";
+        message.textContent = "Please check your selected units.";
+        return;
+    }
 
-    document.getElementById("message").textContent =
-    `${value} ${from} = ${Number(convertedValue.toFixed(4))} ${to}`;
+    const formattedResult = Number(convertedValue.toFixed(4));
+
+    result.textContent = formattedResult;
+    resultUnit.textContent = to;
+    message.textContent = `${value} ${from} = ${formattedResult} ${to}`;
 }
+
 swapButton.addEventListener("click", function() {
     const previousFrom = fromUnit.value;
 
