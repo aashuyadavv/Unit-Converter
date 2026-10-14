@@ -5,6 +5,10 @@ const valueInput = document.getElementById("input-value");
 const result = document.getElementById("result");
 const swapButton = document.getElementById("swap-btn");
 const resetButton = document.getElementById("reset-btn");
+const historyList = document.getElementById("history-list");
+const clearHistoryButton = document.getElementById("clear-history");
+
+let conversionHistory = [];
 
 const units = {
     length: ["Meter", "Kilometer", "Centimeter", "Millimeter", "Mile", "Foot", "Inch"],
@@ -116,6 +120,11 @@ function updateResult() {
     result.textContent = formattedResult;
     resultUnit.textContent = to;
     message.textContent = `${value} ${from} = ${formattedResult} ${to}`;
+    conversionHistory.unshift(
+    `${value} ${from} = ${formattedResult} ${to}`
+);
+
+renderHistory();
 }
 
 swapButton.addEventListener("click", function() {
@@ -138,4 +147,24 @@ resetButton.addEventListener("click", function() {
 
     document.getElementById("message").textContent =
         "Enter a value to get started.";
+});
+
+function renderHistory() {
+    historyList.innerHTML = "";
+
+    if (conversionHistory.length === 0) {
+        historyList.innerHTML = "<li>No conversions yet.</li>";
+        return;
+    }
+
+    conversionHistory.forEach(function(item) {
+        const li = document.createElement("li");
+        li.textContent = item;
+        historyList.appendChild(li);
+    });
+}
+
+clearHistoryButton.addEventListener("click", function() {
+    conversionHistory = [];
+    renderHistory();
 });

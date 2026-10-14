@@ -204,13 +204,8 @@ select:focus {
   border-radius: 12px;
   background: #f4f7ff;
   overflow-wrap: anywhere;
-}
 
-/* #result {
-    margin-top: 12px;
-    color: #2459d3;
-    font-size: 32px;
-} */
+}
 
 .result-label {
   color: #62749a;
