@@ -7,6 +7,7 @@ const swapButton = document.getElementById("swap-btn");
 const resetButton = document.getElementById("reset-btn");
 const historyList = document.getElementById("history-list");
 const clearHistoryButton = document.getElementById("clear-history");
+const copyButton = document.getElementById("copy-result");
 
 let conversionHistory = [];
 
@@ -167,4 +168,24 @@ function renderHistory() {
 clearHistoryButton.addEventListener("click", function() {
     conversionHistory = [];
     renderHistory();
+});
+
+copyButton.addEventListener("click", async function() {
+    const textToCopy = `${result.textContent} ${document.getElementById("result-unit").textContent}`;
+
+    if (result.textContent === "—") {
+        return;
+    }
+
+    try {
+        await navigator.clipboard.writeText(textToCopy);
+        copyButton.textContent = "Copied!";
+
+        setTimeout(function() {
+            copyButton.textContent = "Copy Result";
+        }, 1500);
+    } catch (error) {
+        document.getElementById("message").textContent =
+            "Unable to copy. Please copy the result manually.";
+    }
 });
