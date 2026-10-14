@@ -311,3 +311,70 @@ select:focus {
   text-align: center;
   font-size: 12px;
 }
+
+
+/* Conversion History */
+.history-card {
+    margin-top: 22px;
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.history-card .card-heading {
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+#clear-history {
+    padding: 9px 12px;
+    border: 1px solid #dfe4ec;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #475467;
+    font: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#clear-history:hover {
+    background: #f4f7ff;
+    border-color: #c7d7fe;
+    color: #2459d3;
+}
+
+#history-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+#history-list li {
+    padding: 12px 14px;
+    border: 1px solid #e8edf5;
+    border-radius: 10px;
+    background: #f8faff;
+    color: #344054;
+    font-size: 13px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 480px) {
+    .history-card {
+        padding: 21px 17px;
+    }
+
+    .history-card .card-heading {
+        align-items: flex-start;
+    }
+
+    #clear-history {
+        max-width: 100%;
+    }
+}
