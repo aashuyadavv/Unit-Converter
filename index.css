@@ -192,7 +192,7 @@ select:focus {
     transition: background 0.2s, transform 0.2s;
 }
 
-.swap-btn:hover {
+#swap-btn:hover {
   background: #edf3ff;
   transform: rotate(180deg);
 }
@@ -376,5 +376,71 @@ select:focus {
 
     #clear-history {
         max-width: 100%;
+    }
+}
+
+
+/* Copy Result Button */
+.copy-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    margin-top: 14px;
+    padding: 0 16px;
+    border: 1px solid #d7e2ff;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #2459d3;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 650;
+    cursor: pointer;
+    transition: background 0.2s ease,
+                border-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.copy-btn:hover {
+    background: #edf3ff;
+    border-color: #2459d3;
+}
+
+.copy-btn:active {
+    transform: scale(0.98);
+}
+
+.copy-btn:focus-visible,
+#clear-history:focus-visible,
+#swap-btn:focus-visible,
+.reset-btn:focus-visible {
+    outline: 3px solid rgba(36, 89, 211, 0.25);
+    outline-offset: 3px;
+}
+
+/* Consistent button interaction */
+.reset-btn:hover {
+    border-color: #c7d7fe;
+    color: #2459d3;
+}
+
+/* Better spacing for the result */
+.result-box {
+    width: 100%;
+    min-width: 0;
+}
+
+.result-value {
+    overflow-wrap: anywhere;
+}
+
+/* Mobile layout refinement */
+@media (max-width: 480px) {
+    .copy-btn {
+        width: 100%;
+    }
+
+    .result-box {
+        padding: 20px 16px;
     }
 }
