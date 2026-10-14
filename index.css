@@ -306,7 +306,8 @@ select:focus {
 }
 
 .footer-text {
-  margin-top: 27px;
+  /* margin-top: 27px; */
+  margin-bottom: 27px;
   color: #98a0ad;
   text-align: center;
   font-size: 12px;
